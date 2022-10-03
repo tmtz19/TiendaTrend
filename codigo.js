@@ -1,27 +1,31 @@
-alert("Bienvenidos a Tienda Trend")
+// Bienvenida
+let nombreUsuario = prompt("Ingresa tu nombre para comenzar");
+alert("Bienvenido "+nombreUsuario+" a Tienda Trend!")
 
-let articulo=prompt("Ingresa el articulo que vas a comprar para conocer su precio");
-while(articulo!="FIN"){
+// Solicito al usuario que ingrese el codigo del articulo para ver el precio por consola
+let articulo=prompt("Ingresa el codigo del articulo que vas a comprar para conocer su precio. S para salir");
+while(articulo!="S"){
     switch(articulo){
-        case "almohadon":
+        case "1":
             console.log("El precio del almohadon es $2500");
             break;
-        case "frazada":
+        case "2":
             console.log("El precio de la frazada es $3500");
             break;
-        case "cortina":
+        case "3":
             console.log("El precio de la cortina es $3000");
             break;
-        case "manta":
+        case "4":
             console.log("El precio de la manta es $4200");
             break;
         default:
             console.log("Articulo sin stock");
             break;
     }
-    articulo=prompt("Ingresa el articulo que vas a comprar para sumarlo al carrito (FIN para salir)");
+    articulo=prompt("Ingresa el codigo del articulo que vas a comprar para conocer su precio. S para salir");
 }
 
+// Solicito al usuario que ingrese el precio de hasta 4 articulos elegidos para sumarlos al carrito
 let precio;
 let precioTotal = 0;
 
@@ -32,6 +36,7 @@ for (let i = 1 ; i <= 4 ; i++){
     console.log("El carrito acumula $"+precioTotal);
 }
 
+// En caso que el total sea mayor a $10000.00 el envio es gratuito
 if (precioTotal >= 10000){
     alert("Contas con envío gratis")
 }else{
