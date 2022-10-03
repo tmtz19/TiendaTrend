@@ -30,7 +30,7 @@ let precio;
 let precioTotal = 0;
 
 for (let i = 1 ; i <= 4 ; i++){
-    precio=parseInt(prompt("Ingresa el precio del "+i+"° producto seleccionado."));
+    precio=parseInt(prompt("Ingresa el precio del "+i+"° producto seleccionado. Podes llevarte hasta 4 articulos"));
     console.log("El precio ingresado es $"+precio);
     precioTotal = precioTotal + precio;
     console.log("El carrito acumula $"+precioTotal);
