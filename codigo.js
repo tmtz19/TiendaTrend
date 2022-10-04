@@ -78,13 +78,13 @@ if(formaDePago == 2){
     do{
         cantidadCuotas = prompt("Ingresa en cuantas cuotas queres abonar. 3, 6 o 12 cuotas sin interes.")
     }while((cantidadCuotas != 3)&&(cantidadCuotas != 6)&&(cantidadCuotas != 12))
-    alert("El precio a abonar es $"+precioTotal+" en "+cantidadCuotas+" cuotas sin interes de $"+([precioTotal+iva]/cantidadCuotas)+" cada una.")
+    alert("El precio a abonar es $"+(precioTotal+iva)+" en "+cantidadCuotas+" cuotas sin interes de $"+((precioTotal+iva)/cantidadCuotas)+" cada una.")
 }
 
 // Descuento efectivo
 
 function calcularDescuento(precioTotal){
-    return precioTotal * 0,10
+    return precioTotal * 0.10
 }
 let descuento = calcularDescuento(precioTotal)
 let precioConDescuento = ([precioTotal+iva] - descuento)
