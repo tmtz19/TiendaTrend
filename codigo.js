@@ -1,9 +1,31 @@
+/*class Producto{
+    constructor(id, nombre, precio){
+        this.id = id;
+        this.nombre = nombre;
+        this.precio = precio;
+    }
+}
+const producto0 = new Producto(0,"Almohadon", 2500);
+const producto1 = new Producto(1,"Frazada", 3500);
+const producto2 = new Producto(2,"Cortina", 3000);
+const producto3 = new Producto(3,"Manta", 4200);
+
+const misProductos = [producto0, producto1, producto2, producto3]
+
 // Bienvenida
 let nombreUsuario = prompt("Abri la consola del navegador e ingresa tu nombre para comenzar");
 alert("Bienvenido "+nombreUsuario+" a Tienda Trend!")
 
+let mensajePantalla = "Estos son nuestros productos. Ingresa el codigo de producto para elegir el mismo \n"
+for (elemento of misProductos){
+    mensajePantalla += `${elemento.id} - ${elemento.nombre} - $${elemento.precio} \n`
+}
+
+let opcionUser = parseInt(prompt(mensajePantalla))
+const productoElegido = misProductos.find(elemento => elemento.id === opcionUser)
+
 // Solicito al usuario que ingrese el codigo del articulo para ver el precio por consola
-let articulo=prompt("Ingresa el codigo del articulo que vas a comprar para conocer su precio. S para salir. \n1 - Almohadon \n2 - Frazada \n3 - Cortina \n4 - Manta \n5 - Sabanas");
+let articulo=prompt("Ingresa el codigo del articulo que vas a comprar para agregarlo al carrito. S para salir. \n1 - Almohadon \n2 - Frazada \n3 - Cortina \n4 - Manta \n5 - Sabanas");
 while(articulo!="S"){
     switch(articulo){
         case "1":
@@ -92,8 +114,50 @@ if(formaDePago == 3){
     descuento = calcularDescuento(precioTotal)
     console.log("El descuento por abonar en efectivo es de $"+descuento+". Terminas abonando la suma de $"+precioConDescuento)
 }
+*/
+const carrito = [];
+let contenedor = document.getElementById("misprods");
 
+// funcion para las agregar las cards al HTML via DOM
+function renderizarProductos(){
+    for (const producto of productos){
+        contenedor.innerHTML += `
+            <div class="card col-sm-3">
+                <img src=${producto.foto} class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">${producto.id}</h5>
+                    <p class="card-text">${producto.nombre}</p>
+                    <p class="card-text">$ ${producto.precio}</p>
+                    <button id='btn${producto.id}' class="btn btn-primary">Comprar</button>
+                </div>
+            </div>   
+        `;
+    }
+    // Evento para cada boton
+    productos.forEach((producto)=>{
+        document.getElementById(`btn${producto.id}`).addEventListener("click", function(){
+            agregarAlCarrito(producto);
+        })
+    })
+}
 
+renderizarProductos();
+
+// funcion para agregar los productos al carrito al clickear el boton
+function agregarAlCarrito(productoAComprar){
+    carrito.push(productoAComprar);
+    console.table(carrito)
+    alert("Producto "+productoAComprar.nombre+" agregado al carrito.");
+    document.getElementById("tablabody").innerHTML += `
+        <tr>
+            <td>${productoAComprar.id}</td>
+            <td>${productoAComprar.nombre}</td>
+            <td>$${productoAComprar.precio}</td>
+        </tr>
+    `;
+    let totalCarrito = carrito.reduce((acumulador, prod)=>acumulador+prod.precio,0);
+    document.getElementById("total").innerText="Total a pagar $: "+totalCarrito;
+}
 
 
 
