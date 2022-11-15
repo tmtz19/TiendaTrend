@@ -1,0 +1,198 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+}
+i{
+    cursor: pointer;
+}
+.navbar{
+    background-color: #d5bdaf !important;
+    padding: 25px 60px;
+    margin-bottom: 30px;
+}
+.navbar a{
+    color: black !important; 
+}
+.carrito{
+    color: black;
+    padding: 5px;
+    font-size: 20px;
+    position: relative;
+}
+.cantCarrito{
+    font-size: 15px;
+    position: absolute;
+    top: -4px;
+    right: -3px;
+}
+.portada{
+    background-image:url(https://julidesignhome.com/img/cms/almohadones-para-cama-decorativos-cobre.JPG);
+    background-position: center;
+    background-size: cover;
+    margin-top: -30px;
+    color: black;
+}
+.shop{
+    display: grid;
+    grid-template-columns: repeat(4, 225px);
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+footer {
+    background-color: #d5bdaf;
+    text-align: center;
+    color: #2b2d42;
+    padding: 25px;
+    font-family: "oswald";
+}
+footer i {
+    color: #2b2d42;
+    font-size: 30px;
+    letter-spacing: 10px;
+}
+footer i:hover {
+    color: #e3d5ca;
+    transition: all 300ms ease;
+}
+
+.item{
+    border: 2px solid black;
+    border-radius: 4px;
+}
+.item img{
+    width: 100%;
+    border-radius: 2px 2px 0 0 ;
+}
+.detalle{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+}
+.precio-cantidad{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.botones{
+    display: flex;
+    gap: 9px;
+}
+
+.text-center{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.botonInicio,.finalizarCompra,.vaciarCarrito{
+    background-color: #d5bdaf;
+    color: black;
+    border-radius: 3px;
+    padding: 5px;
+    border: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.bi-x-lg{
+    color: red;
+    font: bolder;
+    margin-bottom: 20px;
+}
+.carritoAAbonar{
+    display: grid;
+    grid-template-columns: repeat(1, 400px);
+    justify-content: center;
+    gap: 20px;
+}
+.item-carrito{
+    border: 2px solid #d5bdaf;
+    border-radius: 5px;
+    display: flex;
+}
+.info{
+    padding: 10px;
+    display: flex;
+    width: 240px;
+    align-items: center;
+    justify-content: space-between;
+}
+.seccion{
+    margin-top: 20px;
+}
+.titulo-precio{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+.carrito-precio{
+    background-color: #d5bdaf;
+    border-radius: 5px;
+    padding: 2px 4px;
+}
+.precioFinal{
+    padding-left: 10px;
+}
+
+.formulario{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 0px 50px
+}
+.formularioLabel{
+    display: block;
+    font-weight: 700;
+    padding: 10px;
+    cursor: pointer;
+}
+.formularioInput{
+    width: 100%;
+    background: #d5bdaf;
+    border: 0px solid transparent;
+    border-radius: 3px;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 40px 0 10px;
+    transition: 0.5s ease all;
+}
+
+.formularioError{
+    font-size: 12px;
+    margin-bottom: 0;
+    display: none;
+}
+.formularioErrorActivo{
+    display: block;
+}
+.formularioMensaje{
+    grid-column: span 2;
+    display: none;
+}
+.formularioMensajeActivo{
+    display: block;
+}
+@media (max-width: 1000px) {
+    .shop{
+        grid-template-columns: repeat(2, 225px);
+    }
+}
+@media (max-width: 500px) {
+    .shop{
+        grid-template-columns: repeat(1, 225px);
+    }
+    .formulario{
+        grid-template-columns: repeat(1, 225px);
+        text-align: center;
+        justify-content: center;
+    }
+    .formularioMensaje{
+        grid-column: 1;
+    }
+}

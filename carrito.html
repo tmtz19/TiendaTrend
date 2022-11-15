@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./pages/estilos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <title>Tienda Trend</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid ">
+            <a class="navbar-brand" href="index.html">Tienda Trend</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                </ul>
+                <a href="carrito.html">
+                    <div class="carrito">
+                        <i class="bi bi-cart2"></i>
+                        <div class="cantCarrito" id="cantCarrito">0</div>
+                    </div>
+                </a>
+                
+            </div>
+        </div>
+    </nav>
+    <main>
+        <form action="" class="formulario" id="formulario">
+            <div class="fomularioGrupo" id="grupoNombre">
+                <label for="nombre" class="formularioLabel">Nombre</label>
+                <div class="formularioInput">
+                    <input type="text" class="formularioInput" name="nombre" id="nombre" placeholder="Ingresa tu nombre">
+                </div>
+                <p class="formularioError">El nombre solo puede contener letras.</p>
+            </div>
+
+            <div class="fomularioGrupo" id="grupoApellido">
+                <label for="apellido" class="formularioLabel">Apellido</label>
+                <div class="formularioInput">
+                    <input type="text" class="formularioInput" name="apellido" id="apellido" placeholder="Ingresa tu apellido">
+                </div>
+                <p class="formularioError">El apellido solo puede contener letras.</p>
+            </div>
+
+            <div class="fomularioGrupo" id="grupoEmail">
+                <label for="email" class="formularioLabel">Email</label>
+                <div class="formularioInput">
+                    <input type="email" class="formularioInput" name="email" id="email" placeholder="correo@correo.com">
+                </div>
+                <p class="formularioError">El correo solo puede contener letras, numeros, puntos, guion medio y bajo.</p>
+            </div>
+
+            <div class="fomularioGrupo" id="grupoTelefono">
+                <label for="telefono" class="formularioLabel">Telefono</label>
+                <div class="formularioInput">
+                    <input type="text" class="formularioInput" name="telefono" id="email" placeholder="Ingresa tu telefono">
+                </div>
+                <p class="formularioError">El telefono solo puede contener numeros</p>
+            </div>
+            <div class="formularioMensaje" id="formularioMensaje">
+                <p>Por favor, completa el formulario para poder confirmar la compra</p>
+            </div>
+        </form>
+    </main>
+
+    <div id="label" class="text-center"></div>
+    <div class="carritoAAbonar" id="carritoAAbonar"></div>
+    <br>
+    <footer>
+        <div class="copyright">
+            <p>Copyright Tomas Martinez Inverni© 2022</p>
+        </div>
+        <div class="redes">
+            <a href="https://www.instagram.com/tiendatrendba/?hl=es-la" target="_blank"><i class="bi bi-instagram"></i></a>
+        </div>
+    </footer>
+</body>
+<!-- SweetAlert2 -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="./pages/productos.js"></script>
+<script src="./pages/carrito.js"></script>
+</html>
