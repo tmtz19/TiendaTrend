@@ -125,6 +125,9 @@ footer i:hover {
 .seccion{
     margin-top: 20px;
 }
+.seccion2{
+    margin-top: 20px;
+}
 .titulo-precio{
     display: flex;
     align-items: center;
@@ -171,13 +174,6 @@ footer i:hover {
 .formularioErrorActivo{
     display: block;
 }
-.formularioMensaje{
-    grid-column: span 2;
-    display: none;
-}
-.formularioMensajeActivo{
-    display: block;
-}
 @media (max-width: 1000px) {
     .shop{
         grid-template-columns: repeat(2, 225px);
@@ -191,8 +187,5 @@ footer i:hover {
         grid-template-columns: repeat(1, 225px);
         text-align: center;
         justify-content: center;
-    }
-    .formularioMensaje{
-        grid-column: 1;
     }
 }

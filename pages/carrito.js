@@ -7,20 +7,21 @@ const inputs = document.querySelectorAll("#formulario input")
 
 // expresiones regulares para validar los campos del formulario
 const expresiones = {
-	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-	apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, 
+	apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, 
 	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-	telefono: /^\d{8,14}$/ // 8 a 14 numeros.
+	telefono: /^\d{8,14}$/ 
 }
 
 const campos = {
-    usuario: false,
+    nombre: false,
     apellido: false,
     email: false,
     telefono: false
 }
 
-const validarFormulario = (e) => {
+// Funcion para validar los campos en los input
+let validarFormulario = (e) => {
     switch (e.target.name) {
         case "nombre":
             validarCampo(expresiones.nombre, e.target, "Nombre");
@@ -37,7 +38,8 @@ const validarFormulario = (e) => {
     }
 }
 
-const validarCampo = (expresion, input, campo) => {
+// Funcion que al validar muestra un mensaje de error en caso de no cumplir correctamente la condicion del input
+let validarCampo = (expresion, input, campo) => {
     if(expresion.test(input.value)){
         document.querySelector(`#grupo${campo} .formularioError`).classList.remove("formularioErrorActivo");
         campos[campo] = true;
@@ -46,7 +48,7 @@ const validarCampo = (expresion, input, campo) => {
         campos[campo] = false;
     }
 }
-
+// Cada vez que se levanta una tecla o se selecciona por fuera del input se valida el campo
 inputs.forEach((input) => {
 	input.addEventListener('keyup', validarFormulario);
 	input.addEventListener('blur', validarFormulario);
@@ -94,11 +96,13 @@ let generarItemsCarrito =()=>{
     }else{
         carritoAAbonar.innerHTML = ``;
         label.innerHTML = `
-        <h2>El carrito esta vacio</h2>
+        <h2 class="seccion2">El carrito esta vacio</h2>
         <a href="index.html">
             <button class="botonInicio">Volver al inicio</button>
         </a>
-        
+        <br>
+        <br>
+        <br>
         `;
     }
 }
@@ -185,6 +189,7 @@ let vaciarCarrito = ()=>{
 // Funcion para finalizar la compra 
 let finalizarCompra = ()=>{
     if(campos.nombre && campos.apellido && campos.email && campos.telefono){
+        formulario.reset();
         carrito = [];
         generarItemsCarrito();
         calculo();
