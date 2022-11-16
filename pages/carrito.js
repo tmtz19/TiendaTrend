@@ -14,10 +14,10 @@ const expresiones = {
 }
 
 const campos = {
-    nombre: false,
-    apellido: false,
-    email: false,
-    telefono: false
+    Nombre: false,
+    Apellido: false,
+    Email: false,
+    Telefono: false
 }
 
 // Funcion para validar los campos en los input
@@ -188,7 +188,7 @@ let vaciarCarrito = ()=>{
 
 // Funcion para finalizar la compra 
 let finalizarCompra = ()=>{
-    if(campos.nombre && campos.apellido && campos.email && campos.telefono){
+    if(campos.Nombre && campos.Apellido && campos.Email && campos.Telefono){
         formulario.reset();
         carrito = [];
         generarItemsCarrito();
