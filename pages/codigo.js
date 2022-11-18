@@ -2,7 +2,7 @@ let tienda = document.getElementById("shop");
 
 /*
 Si hay algun dato almacenado en el storage se recupera esa informacion para mostrarla
-Sino se muestra el carrito
+Sino se muestra el carrito vacio
 */
 let carrito = JSON.parse(localStorage.getItem("datos")) || [];
 

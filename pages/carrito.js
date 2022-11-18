@@ -13,6 +13,7 @@ const expresiones = {
 	telefono: /^\d{8,14}$/ 
 }
 
+// Le asigno una condicion false a los campos por defecto para poder validarlos con la funcion validarCampo
 const campos = {
     Nombre: false,
     Apellido: false,
